@@ -1,0 +1,5 @@
+export const SET_COMICS = 'SET_COMICS';
+export const SET_COMIC = 'SET_COMIC';
+export const SET_RATING = 'SET_RATING';
+export const FETCH_COMIC_SUCCESS = 'FETCH_COMIC_SUCCESS';
+export const FETCH_COMIC_FAILURE = 'FETCH_COMIC_FAILURE';
