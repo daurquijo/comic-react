@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchRandomComic, fetchComicById } from '../../redux/actions';
 import { useState } from 'react';
+import Swall from 'sweetalert2';
 import './Buttons.css';
 
 const Buttons = () => {
@@ -17,7 +18,11 @@ const Buttons = () => {
             dispatch(fetchComicById(parseInt(inputComicId)));
             setInputComicId('');
         } else {
-            alert('Please enter a correct id');
+            Swall.fire({
+                title: 'Error',
+                text: 'Please enter a correct id',
+                icon: 'error'
+            });
         }
     };
 

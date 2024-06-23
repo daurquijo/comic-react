@@ -11,7 +11,8 @@ export const fetchRandomComic = () => {
     return async (dispatch, getState) => {
         try {
             const { comics } = getState();
-            const currentComicResponse  = await axios.get('/info.0.json');
+            const currentComicResponse  = await axios.get('https://xkcd.com/info.0.json');
+            console.log(currentComicResponse);
             const maxNum = currentComicResponse.data.num;
             const randomNum = Math.floor(Math.random() * maxNum) + 1;
             let comicResponse = {};
@@ -19,9 +20,13 @@ export const fetchRandomComic = () => {
                 comicResponse = comics.find(comic => comic.num === randomNum);
                 dispatch(setComic(comicResponse));
             } else {
-                comicResponse = await axios.get(`/${randomNum}/info.0.json`);
-                dispatch(setComic(comicResponse.data));
-                dispatch(setComics([...comics, comicResponse.data]));
+                if(isNaN(randomNum)) {
+                    dispatch({ type: FETCH_COMIC_FAILURE, payload: 'The random number is not valid' });
+                } else {
+                    comicResponse = await axios.get(`/${randomNum}/info.0.json`);
+                    dispatch(setComic(comicResponse.data));
+                    dispatch(setComics([...comics, comicResponse.data]));
+                }
             }
         } catch (error) {
             dispatch({ type: FETCH_COMIC_FAILURE, payload: error.message });

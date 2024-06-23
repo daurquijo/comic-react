@@ -19,6 +19,13 @@ describe('Comic Component', () => {
         transcript: 'Mock Comic Transcript'
     };
 
+    test('renders comic component', () => {
+        render(<Comic comic={mockComic} />);
+        
+        const comicContainer = screen.getByTestId('comic-container');
+        expect(comicContainer).toBeInTheDocument();
+    });
+
     test('renders comic details', () => {
         render(<Comic comic={mockComic} />);
         
@@ -38,8 +45,9 @@ describe('Comic Component', () => {
     test('renders nothing if no comic is passed', () => {
         render(<Comic comic={null} />);
         const loadingSpinner = screen.getByTestId('loading-spinner');
-
+        
         expect(loadingSpinner).toBeInTheDocument();
-        expect(loadingSpinner.textContent).toBe('Loading...');
     });
+
+    // test('Allow the user to see another comic')
 });

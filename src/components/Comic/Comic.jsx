@@ -6,7 +6,7 @@ const Comic = ({ comic }) => {
     if (!comic) {
         return (
             <div className="loading-spinner" data-testid="loading-spinner">
-                Loading...
+                Error fetching the Comic, please try again later.
             </div>
         );
     }
