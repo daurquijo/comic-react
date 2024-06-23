@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { setRating } from '../../redux/actions';
+import Swall from 'sweetalert2';
 import './Rating.css';
 
 const Rating = ({ comic }) => {
@@ -13,6 +14,11 @@ const Rating = ({ comic }) => {
     }, [comic]);
 
     const handleSetRating = (comicId, rating) => {
+        Swall.fire({
+            title: 'Success',
+            text: `your rating for the comic was ${rating}`,
+            icon: 'success'
+        });
         dispatch(setRating(comicId, rating));
         setComicRating(rating);
     };
