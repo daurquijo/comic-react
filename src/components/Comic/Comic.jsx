@@ -10,7 +10,7 @@ const Comic = ({ comic }) => {
             </div>
         );
     }
-
+    console.log(comic);
     return (
         <div className="comic-container" data-testid="comic-container">
             <div className="comic-content">

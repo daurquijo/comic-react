@@ -17,7 +17,7 @@ const ComicList = () => {
 
     return (
         <div className="comic-slider">
-            <h1>List of Comics:</h1>
+            <h1>Comics list:</h1>
             <Swiper
                 spaceBetween={20}
                 slidesPerView={1}
