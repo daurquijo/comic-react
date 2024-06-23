@@ -3,7 +3,6 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background-color: #f4f4f4;
 }
 
 .comic-content {
@@ -18,9 +17,16 @@
 }
 
 .comic-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 24px;
   color: #333;
   margin-bottom: 10px;
+}
+
+.comic-title p {
+  margin-right: 25px;
 }
 
 .comic-image {
@@ -28,6 +34,7 @@
   height: auto;
   margin: 20px 0;
   border-radius: 8px;
+  object-fit: contain;
 }
 
 .comic-date {

@@ -21,7 +21,7 @@ const ComicList = () => {
             <Swiper
                 spaceBetween={20}
                 slidesPerView={1}
-                navigation
+                navigation={false}
                 pagination={{ clickable: true }}
                 breakpoints={{
                     640: {
@@ -42,9 +42,8 @@ const ComicList = () => {
                     <SwiperSlide key={comic.num}>
                         <div className="comic-slide">
                             <div className="comic-info">
+                                <p>#{comic.num}</p>
                                 <h2>{comic.title}</h2>
-                                <p>{comic.rating}</p>
-                                <img src={comic.img} alt={comic.alt} />
                                 <button onClick={() => handleFetchComicById(comic.num)}>View Comic</button>
                             </div>
                         </div>

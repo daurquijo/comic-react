@@ -1,3 +1,4 @@
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchRandomComic, fetchComicById } from '../../redux/actions';
 import { useState } from 'react';
@@ -30,15 +31,18 @@ const Buttons = () => {
     return (
         <div className="buttons-container">
             <button onClick={handleFetchRandomComic}>Get Random</button>
-            <input
-                type="text"
-                value={inputComicId}
-                onChange={handleInputChange}
-                maxLength={4}
-                pattern="[0-9]*"
-                title="Please enter only numeric digits"
-            />
-            <button onClick={handleFetchComicById}>Get</button>
+            <div>
+                <input
+                    type="text"
+                    value={inputComicId}
+                    onChange={handleInputChange}
+                    maxLength={4}
+                    pattern="[0-9]*"
+                    title="Please enter only numeric digits"
+                    placeholder='Comic ID'
+                />
+                <button onClick={handleFetchComicById}>Get</button>
+            </div>
         </div>
     );
 };

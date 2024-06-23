@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { setRating } from '../../redux/actions';
 import './Rating.css';
 
 const Rating = ({ comic }) => {
     const dispatch = useDispatch();
-    const [comicRating, setComicRating] = useState(comic?.rating ? comic.rating : 0);
+    const [comicRating, setComicRating] = useState(comic?.rating || 0);
     const [hoverRating, setHoverRating] = useState(0);
+
+    useEffect(() => {
+        setComicRating(comic?.rating || 0);
+    }, [comic]);
 
     const handleSetRating = (comicId, rating) => {
         dispatch(setRating(comicId, rating));

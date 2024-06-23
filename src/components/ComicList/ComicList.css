@@ -15,11 +15,10 @@
     overflow: hidden;
     width: 100%;
     max-width: 300px;
-    height: 400px;
+    height: 200px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 .comic-info {
@@ -31,18 +30,10 @@
     height: 100%;
 }
 
-.comic-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-bottom: 1px solid #ddd;
-}
-
 .comic-info h2 {
     font-size: 20px;
     color: #333;
     margin: 10px 0;
-    flex-grow: 1;
 }
 
 .comic-info button {
@@ -53,6 +44,10 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+}
+
+.comic-info p {
+    color: #000;
 }
 
 .comic-info button:hover {
