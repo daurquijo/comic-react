@@ -1,0 +1,25 @@
+.rating-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rating-container p {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.stars {
+    display: flex;
+}
+
+.star {
+    font-size: 2rem;
+    color: #ddd;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.star.filled {
+    color: #FFD700;
+}

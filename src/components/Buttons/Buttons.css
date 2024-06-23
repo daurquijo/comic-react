@@ -1,0 +1,39 @@
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.buttons-container button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 10px 0;
+    font-family: 'Comic Neue', sans-serif;
+    font-size: 1rem;
+}
+
+.buttons-container button:hover {
+    background-color: #0056b3;
+}
+
+.buttons-container input {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    width: 100px;
+    text-align: center;
+    font-family: 'Comic Neue', sans-serif;
+}
+
+.buttons-container input:focus {
+    border-color: #007bff;
+    outline: none;
+}

@@ -1,18 +1,18 @@
-import axios from "axios";
+import axios from 'axios';
 import {
     SET_COMIC,
     SET_COMICS,
     SET_RATING,
-    FETCH_COMIC_SUCCESS,
+    // FETCH_COMIC_SUCCESS,
     FETCH_COMIC_FAILURE,
-} from "./actionTypes";
+} from './actionTypes';
 
 export const fetchRandomComic = () => {
     return async (dispatch, getState) => {
         try {
             const { comics } = getState();
             const currentComicResponse  = await axios.get('/info.0.json');
-            const maxNum = currentComicResponse .data.num;
+            const maxNum = currentComicResponse.data.num;
             const randomNum = Math.floor(Math.random() * maxNum) + 1;
             let comicResponse = {};
             if (comics.find(comic => comic.num === randomNum)) {
@@ -26,13 +26,13 @@ export const fetchRandomComic = () => {
         } catch (error) {
             dispatch({ type: FETCH_COMIC_FAILURE, payload: error.message });
         }
-    }
-}
+    };
+};
 
 export const fetchComicById = (comicId) => {
     return async (dispatch, getState) => {
         try {
-            const { comics } = getState(); // Obtenemos los comics del estado actual
+            const { comics } = getState();
             let comicResponse = {};
             if (comics.find(comic => comic.num === comicId)) {
                 comicResponse = comics.find(comic => comic.num === comicId);
