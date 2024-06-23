@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+        {
+            "source": "/info.0.json",
+            "destination": "https://xkcd.com/info.0.json"
+        }
+    ]
+}
