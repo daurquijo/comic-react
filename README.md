@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+This project is a web application developed with React and Redux, utilizing the XKCD API to fetch and display random comics. Users can interact with the comics by rating them, navigating between previously shown random comics, and searching for specific comics by their number.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Running the Project:
+To run the project locally, follow these steps:
 
-## Available Scripts
+1 .git clone https://github.com/daurquijo/comic-react.git
 
-In the project directory, you can run:
+2. npm install
 
-### `npm start`
+3. npm start
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This will start a local server and open the application in your default web browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Interacting with the Application:
+Once the application is running, you can:
 
-### `npm test`
+View a Random Comic: The application fetches a random comic from the XKCD API and displays its title, image, and number.
+Rate the Comic: Users can rate the comic using interactive elements provided below the comic.
+Get a Specific Comic: Users can enter a specific XKCD comic number and the application will display it.
+Access Previous Comics: You can access any previously shown random comic through a history or by searching for its specific number.
+Search for a Specific Comic: In addition to displaying random and specific number comics, users can search and directly access any specific XKCD comic by its number.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Building the Solution:
+The solution was built using the following technologies and methodologies:
 
-### `npm run build`
+React and Redux: Used for the user interface and managing global state, respectively.
+Jest: Employed for writing unit tests for key functions and components.
+ESLint: Configured to maintain clean and consistent code.
+HTML, CSS, and JavaScript: Utilized for the basic structure, styling, and functionality of the application.
+XKCD API: Integrated to dynamically fetch and display comic data on the user interface.
+Main Challenges Encountered
+Throughout development, significant challenges included:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Global State Management: Utilization of Redux to efficiently manage application state and ensure data consistency.
+Integration with External API: Addressing CORS issues by setting up a proxy server and handling asynchronous requests.
+Implementation of Complex Features: Development of features such as displaying previously shown random comics and searching for specific comics by number.
+Deployment Issues: Currently working on deploying the application properly for public access as of the project submission date.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This README provides an overview of the Masiv Comic Test project, detailing how to run it locally, interact with its features, and outlining its construction using modern technologies like React, Redux, Jest, and integration with the XKCD API. For access to the full source code and further exploration of the project, please visit the repository.
