@@ -12,7 +12,6 @@ export const fetchRandomComic = () => {
         try {
             const { comics } = getState();
             const currentComicResponse  = await axios.get('/info.0.json');
-            console.log(currentComicResponse);
             const maxNum = currentComicResponse.data.num;
             const randomNum = Math.floor(Math.random() * maxNum) + 1;
             let comicResponse = {};
