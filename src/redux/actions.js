@@ -7,11 +7,18 @@ import {
     FETCH_COMIC_FAILURE,
 } from './actionTypes';
 
+let apiUrl;
+if (process.env.NODE_ENV === 'development') {
+    apiUrl = '/';
+} else {
+    apiUrl = 'https://xkcd.com/';
+}
+
 export const fetchRandomComic = () => {
     return async (dispatch, getState) => {
         try {
             const { comics } = getState();
-            const currentComicResponse  = await axios.get('https://xkcd.com/info.0.json');
+            const currentComicResponse  = await axios.get(`${apiUrl}info.0.json`);
             console.log(currentComicResponse);
             const maxNum = currentComicResponse.data.num;
             const randomNum = Math.floor(Math.random() * maxNum) + 1;
@@ -23,7 +30,7 @@ export const fetchRandomComic = () => {
                 if(isNaN(randomNum)) {
                     dispatch({ type: FETCH_COMIC_FAILURE, payload: 'The random number is not valid' });
                 } else {
-                    comicResponse = await axios.get(`/${randomNum}/info.0.json`);
+                    comicResponse = await axios.get(`${apiUrl}${randomNum}/info.0.json`);
                     dispatch(setComic(comicResponse.data));
                     dispatch(setComics([...comics, comicResponse.data]));
                 }

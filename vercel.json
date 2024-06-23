@@ -1,8 +1,8 @@
 {
-    "rewrites": [
+    "routes": [
         {
-            "source": "/info.0.json",
-            "destination": "https://xkcd.com/info.0.json"
+            "src": "/info.0.json",
+            "dest": "https://xkcd.com/info.0.json"
         }
     ]
 }
